@@ -33,3 +33,7 @@ es_tia(T,S):-es_progenitor(P,S),es_hermana(T,P),mujer(T).
 
 es_sobrino(S,T):-es_progenitor(P,S),(es_hermano(P,T);es_hermana(P,T)),hombre(S).
 es_sobrina(S,T):-es_progenitor(P,S),(es_hermano(P,T);es_hermana(P,T)),mujer(S).
+
+
+es_nieto(N,A):-es_progenitor(A,X),es_progenitor(X,N),hombre(N).
+es_nieta(N,A):-es_progenitor(A,X),es_progenitor(X,N),mujer(N).
